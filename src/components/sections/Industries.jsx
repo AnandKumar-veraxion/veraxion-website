@@ -1,0 +1,21 @@
+import SectionHeading from '../ui/SectionHeading'
+import IndustryCard from '../ui/IndustryCard'
+import { industries } from '../../data/industries'
+
+export default function Industries() {
+  return (
+    <section className="py-24 bg-offwhite">
+      <div className="max-w-7xl mx-auto px-6">
+        <SectionHeading
+          title="Industries"
+          subtitle="We specialize in delivering innovative solutions, our team is committed to driving success and creating value. With a deep understanding of each sector's unique challenges, we help businesses thrive in an ever-evolving landscape."
+        />
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+          {industries.map((ind, i) => (
+            <IndustryCard key={ind.id} {...ind} index={i} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

@@ -1,0 +1,38 @@
+export const offices = [
+  {
+    id: 1,
+    city: 'Bangalore',
+    country: 'India',
+    entity: 'Veraxion Consulting India Pvt. Ltd.',
+    address: 'Bellandur, Bangalore, Karnataka',
+    email: 'info@Veraxion.com',
+    tel: '+91 9008552640',
+  },
+  {
+    id: 2,
+    city: 'Calgary',
+    country: 'Canada',
+    entity: 'Veraxion Consulting Canada Pvt Ltd',
+    address: 'Erlton Street SW, Calgary, Alberta T2S2V8',
+    email: 'info@Veraxion.com',
+    tel: '+1 403 479 3370',
+  },
+  {
+    id: 3,
+    city: 'Baar (ZG)',
+    country: 'Switzerland',
+    entity: 'Veraxion AG',
+    address: 'Grabenstrasse 15a/b, Baar (ZG), Switzerland',
+    email: 'info@Veraxion.com',
+    tel: '+41 (0)41 511 70 85',
+  },
+  {
+    id: 4,
+    city: 'Bentleigh East',
+    country: 'Australia',
+    entity: 'Veraxion Consulting Australia Pty Ltd',
+    address: '#2, 3 Brady Road, Bentleigh East, Australia',
+    email: 'info@Veraxion.com',
+    tel: '+61 472561885',
+  },
+]
