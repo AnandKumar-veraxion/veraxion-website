@@ -14,9 +14,7 @@ export default function Footer() {
               Veraxi<img src="/veraxion.png" alt="o" className="h-8 w-8 object-contain mx-[1px]" />n
             </Link>
             <p className="mt-4 text-sm leading-relaxed">
-              Unlocking Business Excellence using Technology. A global team of
-              experts helping organizations achieve sustainable growth through
-              Digital, Data, Engineering, and AI.
+              Unlocking Business Excellence using Technology. 
             </p>
           </div>
 

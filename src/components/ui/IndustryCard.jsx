@@ -5,11 +5,15 @@ import * as Icons from 'lucide-react'
 export default function IndustryCard({ title, description, icon, images, index, imagesReady }) {
   const Icon = Icons[icon]
   const [currentImage, setCurrentImage] = useState(0)
+  const [prevImage, setPrevImage] = useState(0)
 
   useEffect(() => {
     if (!imagesReady || !images || images.length <= 1) return
     const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length)
+      setCurrentImage((prev) => {
+        setPrevImage(prev)
+        return (prev + 1) % images.length
+      })
     }, 4000)
     return () => clearInterval(interval)
   }, [imagesReady, images])
@@ -33,7 +37,8 @@ export default function IndustryCard({ title, description, icon, images, index, 
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out"
           style={{
-            opacity: imagesReady && i === currentImage ? 0.9 : 0,
+            opacity: imagesReady && (i === currentImage || i === prevImage) ? 0.9 : 0,
+            zIndex: i === currentImage ? 2 : i === prevImage ? 1 : 0,
             willChange: 'opacity',
           }}
         />

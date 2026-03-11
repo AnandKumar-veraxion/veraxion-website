@@ -1,8 +1,15 @@
 import { motion } from 'framer-motion'
 
-export default function Hero({ title, subtitle, children }) {
+export default function Hero({ title, subtitle, preTitle, children, bgImage }) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-pattern noise-overlay">
+      {bgImage && (
+        <img
+          src={bgImage}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover opacity-25"
+        />
+      )}
       <div className="absolute inset-0 bg-mesh-gradient" />
 
       <div className="absolute inset-0 overflow-hidden">
@@ -61,6 +68,16 @@ export default function Hero({ title, subtitle, children }) {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+        {preTitle && (
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-xs md:text-sm uppercase tracking-[0.25em] text-white/70 font-bold mb-8"
+          >
+            {preTitle}
+          </motion.p>
+        )}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
