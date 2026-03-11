@@ -4,7 +4,8 @@ const allImages = [
   // Career section
   '/stock/career-section/car1.jpg',
   '/stock/career-section/car2.jpg',
-  '/stock/career-section/car3.png',
+  '/stock/career-section/car3.JPG',
+  '/stock/career-section/car4.jpg',
   // Food & Agri
   '/stock/food-agri/ags1.jpg',
   '/stock/food-agri/ags2.jpg',

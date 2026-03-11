@@ -81,7 +81,7 @@ export default function About() {
           <div
             className={`transition-all duration-700 ${imgInView && loaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}
           >
-            <div className="grid grid-cols-5 grid-rows-2 gap-4 h-[500px]">
+            <div className="grid grid-cols-4 grid-rows-2 gap-4 h-[500px]">
               <div className="col-span-2 row-span-2 rounded-2xl overflow-hidden group">
                 <img
                   src="/stock/career-section/car1.jpg"
@@ -89,16 +89,23 @@ export default function About() {
                   className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]"
                 />
               </div>
-              <div className="col-span-3 row-span-1 rounded-2xl overflow-hidden group">
+              <div className="col-span-2 row-span-1 rounded-2xl overflow-hidden group">
                 <img
                   src="/stock/career-section/car2.jpg"
                   alt=""
-                  className="w-full h-full object-cover rounded-2xl"
+                  className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]"
                 />
               </div>
-              <div className="col-span-3 row-span-1 rounded-2xl overflow-hidden group">
+              <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden group">
                 <img
-                  src="/stock/career-section/car3.png"
+                  src="/stock/career-section/car3.JPG"
+                  alt=""
+                  className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </div>
+              <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden group">
+                <img
+                  src="/stock/career-section/car4.jpg"
                   alt=""
                   className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]"
                 />
