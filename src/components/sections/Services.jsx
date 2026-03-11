@@ -4,7 +4,7 @@ import { services } from '../../data/services'
 
 export default function Services() {
   return (
-    <section className="py-24 bg-white">
+    <section className="section-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <SectionHeading

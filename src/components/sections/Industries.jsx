@@ -4,8 +4,10 @@ import { industries } from '../../data/industries'
 
 export default function Industries() {
   return (
-    <section className="py-24 bg-offwhite">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="section-light">
+      {/* Subtle mesh background */}
+      <div className="absolute inset-0 bg-mesh-gradient opacity-50" />
+      <div className="relative max-w-7xl mx-auto px-6">
         <SectionHeading
           title="Industries"
           subtitle="We specialize in delivering innovative solutions, our team is committed to driving success and creating value. With a deep understanding of each sector's unique challenges, we help businesses thrive in an ever-evolving landscape."

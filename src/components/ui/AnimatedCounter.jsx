@@ -24,11 +24,11 @@ export default function AnimatedCounter({ value, suffix = '', label }) {
 
   return (
     <div ref={ref}>
-      <div className="text-4xl md:text-5xl font-bold text-copper tabular-nums">
-        {count}
-        <span className="text-copper/70">{suffix}</span>
+      <div className="text-4xl md:text-5xl font-bold tabular-nums">
+        <span className="text-copper">{count}</span>
+        <span className="text-copper/50">{suffix}</span>
       </div>
-      <div className="mt-2 text-sm text-white/60 font-medium tracking-wide uppercase">
+      <div className="mt-3 text-sm text-white/40 font-medium tracking-wide uppercase">
         {label}
       </div>
     </div>

@@ -11,7 +11,6 @@ export default function Home() {
       <Hero
         title={<>Unlocking Business<br />Excellence using<br /><span className="text-copper">Technology</span></>}
         subtitle="A global team of experts helping organizations achieve sustainable growth through Digital, Data, Engineering, and AI."
-        showScroll
       />
       <Industries />
       <Services />

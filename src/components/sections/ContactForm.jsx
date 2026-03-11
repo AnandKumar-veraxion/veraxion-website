@@ -5,7 +5,7 @@ import { offices } from '../../data/offices'
 
 export default function ContactForm() {
   return (
-    <section className="py-24 bg-offwhite">
+    <section className="section-light">
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeading title="Our Offices" />
         <div className="grid md:grid-cols-2 gap-6">
@@ -14,13 +14,12 @@ export default function ContactForm() {
           ))}
         </div>
 
-        {/* Map placeholder */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-16 rounded-lg overflow-hidden h-[400px] bg-gray-200"
+          className="mt-16 rounded-2xl overflow-hidden h-[400px] bg-gray-100"
         >
           <iframe
             title="Veraxion Offices"
