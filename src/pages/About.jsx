@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { imagesReady as imagesReadyPromise } from '../utils/preloadImages'
 import { Users, Lightbulb, Shield, Handshake } from 'lucide-react'
 import PageTransition from '../components/layout/PageTransition'
 import Hero from '../components/sections/Hero'
@@ -25,6 +26,12 @@ const values = [
 export default function About() {
   const [activeTab, setActiveTab] = useState('genesis')
   const [valRef, valInView] = useInView({ triggerOnce: true, threshold: 0.2 })
+  const [imgRef, imgInView] = useInView({ triggerOnce: true, threshold: 0.2 })
+  const [loaded, setLoaded] = useState(false)
+
+  useEffect(() => {
+    imagesReadyPromise.then(() => setLoaded(true))
+  }, [])
 
   const activeContent = storyTabs.find((t) => t.key === activeTab)
 
@@ -64,6 +71,39 @@ export default function About() {
                 {activeContent?.content}
               </motion.div>
             </AnimatePresence>
+          </div>
+        </div>
+      </section>
+
+      {/* Photos section */}
+      <section className="section-light" ref={imgRef}>
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div
+            className={`transition-all duration-700 ${imgInView && loaded ? 'opacity-100' : 'opacity-0 translate-y-10'}`}
+          >
+            <div className="grid grid-cols-5 grid-rows-2 gap-4 h-[500px]">
+              <div className="col-span-2 row-span-2 rounded-2xl overflow-hidden group">
+                <img
+                  src="/stock/career-section/car1.jpg"
+                  alt=""
+                  className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </div>
+              <div className="col-span-3 row-span-1 rounded-2xl overflow-hidden group">
+                <img
+                  src="/stock/career-section/car2.jpg"
+                  alt=""
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              </div>
+              <div className="col-span-3 row-span-1 rounded-2xl overflow-hidden group">
+                <img
+                  src="/stock/career-section/car3.png"
+                  alt=""
+                  className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
