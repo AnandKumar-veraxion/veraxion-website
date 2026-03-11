@@ -1,8 +1,18 @@
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import * as Icons from 'lucide-react'
 
-export default function IndustryCard({ title, description, icon, gradient, index }) {
+export default function IndustryCard({ title, description, icon, images, index, imagesReady }) {
   const Icon = Icons[icon]
+  const [currentImage, setCurrentImage] = useState(0)
+
+  useEffect(() => {
+    if (!imagesReady || !images || images.length <= 1) return
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length)
+    }, 4000)
+    return () => clearInterval(interval)
+  }, [imagesReady, images])
 
   return (
     <motion.div
@@ -11,10 +21,24 @@ export default function IndustryCard({ title, description, icon, gradient, index
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.15 }}
       whileHover={{ y: -8 }}
-      className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${gradient} p-8 min-h-[300px] flex flex-col justify-end cursor-pointer group`}
+      className="relative overflow-hidden rounded-2xl bg-black p-8 min-h-[300px] flex flex-col justify-end cursor-pointer group"
     >
-      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/15 transition-all duration-500" />
-      {/* Glow effect on hover */}
+      {/* Background images - all rendered hidden, CSS toggles opacity */}
+      {images && images.map((src, i) => (
+        <img
+          key={src}
+          src={src}
+          alt=""
+          loading="eager"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out"
+          style={{
+            opacity: imagesReady && i === currentImage ? 0.9 : 0,
+            willChange: 'opacity',
+          }}
+        />
+      ))}
+      <div className="absolute inset-0 bg-black/15 group-hover:bg-black/5 transition-all duration-500" />
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-white/10 to-transparent" />
       <div className="relative z-10">
         {Icon && (
@@ -23,7 +47,7 @@ export default function IndustryCard({ title, description, icon, gradient, index
           </div>
         )}
         <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
-        <p className="text-white/60 text-sm leading-relaxed group-hover:text-white/80 transition-colors duration-300">{description}</p>
+        <p className="text-white/90 text-sm font-medium leading-relaxed group-hover:text-white transition-colors duration-300">{description}</p>
       </div>
     </motion.div>
   )
