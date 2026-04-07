@@ -3,7 +3,6 @@ import Hero from '../components/sections/Hero'
 import Industries from '../components/sections/Industries'
 import Services from '../components/sections/Services'
 import CareersPreview from '../components/sections/CareersPreview'
-import Team from '../components/sections/Team'
 import Stats from '../components/sections/Stats'
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
       />
       <Industries />
       <Services />
-      <Team />
       <CareersPreview />
       <Stats />
     </PageTransition>

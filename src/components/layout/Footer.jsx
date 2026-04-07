@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Mail, Phone, MapPin } from 'lucide-react'
+import { Mail, Phone, MapPin, Linkedin } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -25,6 +25,15 @@ export default function Footer() {
               <Link to="/about" className="hover:text-copper transition-colors">About</Link>
               <Link to="/careers" className="hover:text-copper transition-colors">Careers</Link>
               <Link to="/contact" className="hover:text-copper transition-colors">Contact</Link>
+              <a
+                href="https://www.linkedin.com/company/veraxion/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 hover:text-copper transition-colors"
+              >
+                <Linkedin size={16} />
+                LinkedIn
+              </a>
             </div>
           </div>
 
